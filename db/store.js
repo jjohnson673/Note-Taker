@@ -2,14 +2,14 @@ const util = require('util');
 const fs = require('fs');
 
 //Generating unique IDs
-const uuidv1 = require('uuid/v1');
+const uuidv1 = require('uuid');
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
 class Store {
     read() {
-        return readFileAsync('db/db,json', 'utf8');
+        return readFileAsync('db/db.json', 'utf8');
     }
 
     write(note) {
